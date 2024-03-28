@@ -17,9 +17,11 @@ double find_sdot_c(double *a, double *b, int n) {
 }
 
 int main() {
+	// Set random seed
+	srand(time(NULL));
 	// Vector Size, max range, and # of trials
 	const int n = pow(2, 20);
-	const int max = RAND_MAX;
+	const int max = rand();
 	const int trials = 30;
 	// Memory allocation for vectors A, B
 	double* a = (double*)malloc(n * sizeof(double));
@@ -32,8 +34,8 @@ int main() {
 
 	// Setting up A and B values
 	for (int i = 0; i < n; i++) {
-		a[i] = max * (double)rand()/RAND_MAX;
-		b[i] = max * (double)rand()/RAND_MAX;
+		a[i] = max*((double)rand()/RAND_MAX);
+		b[i] = max*((double)rand()/RAND_MAX);
 	}
 
 	for (int i = 0; i < trials; i++) {
