@@ -43,12 +43,15 @@ int main() {
 		start = clock();
 		sdot_c = find_sdot_c(a, b, n);
 		end = clock();
-		exe_time_c += (double)(end - start)/CLOCKS_PER_SEC;
+		exe_time_c += (double)(end - start) / CLOCKS_PER_SEC;
+	}
+
+	for (int i = 0; i < trials; i++) {
 		// Call for the x86 function
 		start = clock();
 		sdot_x86 = find_sdot_x86(a, b, n);
 		end = clock();
-		exe_time_x86 += (double)(end - start)/CLOCKS_PER_SEC;
+		exe_time_x86 += (double)(end - start) / CLOCKS_PER_SEC;
 	}
 
 	// Average time
