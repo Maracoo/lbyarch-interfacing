@@ -61,7 +61,7 @@ void calculate_sdot(int n, int max, int trials) {
 	printf("Vector size: 2^%d\n", (int)log2(n));
 
 	// Print Vectors A and B (First 5 elements)
-	printf("\nVectors A and B (First 10 elements):\n");
+	printf("\nVectors A and B (First 10 elements in 2 d.p.):\n");
 	printf("Vector A: ");
 	for (int i = 0; i < 10; i++) {
 		printf("%.2lf", a[i]);
@@ -78,14 +78,14 @@ void calculate_sdot(int n, int max, int trials) {
 	}
 
 	// Sanity check
-	printf("\n\nComputed Sdot:\n");
-	printf("C: %.2lf | x86: %.2lf\n", sdot_c, sdot_x86);
+	printf("\n\nComputed Sdot (Calculated using actual values):\n");
+	printf("C: %.6lf | x86: %.6lf\n", sdot_c, sdot_x86);
 
 	// Do they match?
 	printf("Accuracy: %.2f%%\n", sdot_c * 100 / sdot_x86);
 
 	// Execution Time
-	printf("\nExecution Time (First 10 trials):\n");
+	printf("\nExecution Time in seconds (First 10 trials):\n");
 	printf("C: ");
 	for (int i = 0; i < 10; i++) {
 		printf("%.6lf", exe_time_list_c[i]);
@@ -101,14 +101,11 @@ void calculate_sdot(int n, int max, int trials) {
 		}
 	}
 	// Average Execution Time
-	printf("\n\nAverage Execution Time:\n");
+	printf("\n\nAverage Execution Time in seconds (%d trials):\n", trials);
 	printf("C: %.6lf seconds | x86: %.6lf seconds\n", exe_time_c, exe_time_x86);
 
 	// Difference in time
 	printf("Time difference (C - x86): %.6lf seconds\n\n", exe_time_c - exe_time_x86);
-
-	// Divider
-	printf("--------------------------------------------------\n");
 
 	free(a);
 	free(b);
@@ -125,6 +122,9 @@ int main() {
 	const int trials = 30;
 	
 	for(int i = 0; i < 3; i++) {
+		printf("--------------------------------------------------\n");
+		printf("Generating for n = 2^%d\n", (int)log2(n_values[i]));
+		printf("--------------------------------------------------\n");
 		calculate_sdot(n_values[i], max, trials);
 	}
 
