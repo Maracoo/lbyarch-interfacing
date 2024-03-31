@@ -14,13 +14,13 @@ This project requires the implementation of a kernel in both C programming langu
 ## Program Output
 ### 1. Debug Mode
 **n = 2^20**
-![Debug Mode 2^20](img\debug_20.png)
+![Debug Mode 2^20](img/debug_20.png)
 
 **n = 2^24**
-![Debug Mode 2^24](img\debug_24.png)
+![Debug Mode 2^24](img/debug_24.png)
 
 **n = 2^28**
-![Debug Mode 2^28](img\debug_28.png)
+![Debug Mode 2^28](img/debug_28.png)
 
 Comparing the performance of the C program and the x86-64 assembly kernels for vector sizes of 2^20, 2^24, and 2^28, we observed that both kernels achieved 100% correctness in calculating the dot product (sdot). However, significant differences were apparent in their average execution times. The x86-64 assembly kernel consistently outperformed the C program, demonstrating faster execution times across all vector sizes.
 
@@ -28,13 +28,13 @@ For the smallest vector size of 2^20, the average execution time difference was 
 
 ### 2. Release Mode
 **n = 2^20**
-![Release Mode 2^20](img\release_20.png)
+![Release Mode 2^20](img/release_20.png)
 
 **n = 2^24**
-![Release Mode 2^24](img\release_24.png)
+![Release Mode 2^24](img/release_24.png)
 
 **n = 2^28**
-![Release Mode 2^28](img\release_28.png)
+![Release Mode 2^28](img/release_28.png)
 
 In contrast to the Debug mode, the C program outperforms the x86-64 assembly for the tested vector sizes: 2^20, 2^24, and 2^28. This can be observed by the increasing negative execution time difference from -0.000367 seconds to -0.281100 seconds as the vector size increased from 2^20 to 2^28. Despite this difference, the correctness of the dot product computation remained 100% accurate, producing the same result for both implementations.
 
