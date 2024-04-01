@@ -142,10 +142,10 @@
     <CustomBuild Include="sdot_x86.asm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">c:\nasm\nasm -fwin64 sdot_x86.asm</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)/nasm/nasm -fwin64 sdot_x86.asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sdot_x86.obj</Outputs>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">c:\nasm\nasm -fwin64 sdot_x86.asm</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)/nasm/nasm -fwin64 sdot_x86.asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">sdot_x86.obj</Outputs>
     </CustomBuild>
   </ItemGroup>
